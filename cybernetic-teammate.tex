@@ -1,0 +1,96 @@
+% The Cybernetic Teammate | Organization Science (2026)
+% Compile with pdfLaTeX (recommended) or XeLaTeX in Overleaf.
+% Original CCM4 theme files and background graphics are kept unchanged.
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{heuristica}
+\usepackage[heuristica,vvarbb,bigdelims]{newtxmath}
+\usepackage[sfdefault,scaled=.85]{FiraSans}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{tabularx}
+\usepackage{array}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+
+\usetheme{ccm4}
+\definecolor{paperblue}{HTML}{003062}
+\definecolor{papergold}{HTML}{C99C00}
+\definecolor{paperred}{HTML}{A21916}
+\definecolor{papergreen}{HTML}{287B70}
+\definecolor{papergray}{HTML}{697384}
+
+% Streamlined navigation: preserve the CCM4 look without cramming section labels.
+\setbeamercolor{section in head/foot}{fg=white,bg=rojotexto}
+\setbeamertemplate{headline}{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=\paperwidth,ht=4.2ex,dp=1.5ex,center]{section in head/foot}%
+  \scriptsize\insertsectionnavigationhorizontal{\paperwidth}{\hskip0.03\paperwidth}{\hskip0.03\paperwidth}%
+  \end{beamercolorbox}}}
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{\begin{beamercolorbox}[wd=\paperwidth,ht=2.8ex,dp=1.0ex,leftskip=0.7cm,rightskip=0.7cm]{author in head/foot}%
+  \scriptsize The Cybernetic Teammate \hfill Dell'Acqua et al. (2026) \hfill \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}}
+\setbeamerfont{normal text}{size=\normalsize}
+\setbeamerfont{block body}{size=\small}
+\setbeamerfont{block title}{size=\normalsize}
+\setbeamertemplate{navigation symbols}{}
+
+\newcommand{\src}[1]{\par\vfill{\raggedleft{\tiny\color{papergray}Source: Dell'Acqua et al. (2026), #1.}\par}}
+\newcommand{\note}[1]{{\scriptsize\color{papergray}#1}}
+\newcommand{\keypoint}[1]{\begin{alertblock}{Takeaway}\centering\textbf{#1}\end{alertblock}}
+\newcommand{\strong}[1]{{\color{paperred}\textbf{#1}}}
+\newcommand{\basebox}[1]{\fcolorbox{papergray!50}{papergray!8}{\parbox[c][1.04cm][c]{0.94\linewidth}{\centering #1}}}
+\newcommand{\aibox}[1]{\fcolorbox{papergold!75}{papergold!10}{\parbox[c][1.04cm][c]{0.94\linewidth}{\centering #1}}}
+
+% Use a concise title to fit the CCM4 cover's right-aligned typography.
+\title{{\LARGE\textbf{The Cybernetic Teammate}}\\[0.5em]
+{\small A Field Experiment on Generative AI and Teamwork}}
+\author{Paper Presentation}
+\date{Foundations of Smart Governance}
+\institute{Dell'Acqua et al. \;|\; \emph{Organization Science}, 2026}
+
+\begin{document}
+{
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth,height=\paperheight]{images/P4.png}}
+\begin{frame}[plain]\titlepage\end{frame}
+}
+\begin{frame}
+\frametitle{Presentation Roadmap}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\input{cybernetic/01_motivation}
+\input{cybernetic/02_framework}
+\input{cybernetic/03_experiment}
+\input{cybernetic/04_findings}
+\input{cybernetic/05_discussion}
+
+\begin{frame}
+  \frametitle{References}
+  \small
+  \begin{thebibliography}{9}
+  \bibitem{dellacqua2026}
+  Dell'Acqua, F., Ayoubi, C., Lifshitz, H., Sadun, R., Mollick, E., Mollick, L.,
+  Han, Y., Goldman, J., Nair, H., Taub, S., and Lakhani, K. R. (2026).
+  \newblock The cybernetic teammate: A field experiment on generative AI and teamwork.
+  \newblock \emph{Organization Science}, 37(4), 1217--1242.
+  \newblock DOI: 10.1287/orsc.2025.20702.
+  \end{thebibliography}
+  \vfill
+  \note{All reported estimates and findings in this presentation are taken from the article.}
+\end{frame}
+\begin{frame}
+  \frametitle{Thank You}
+  \vfill
+  \centering
+  {\Huge\color{paperred}\textbf{Questions \& Discussion}}\\[1em]
+  {\large Can generative AI become a teammate rather than just a tool?}
+  \vfill
+\end{frame}
+\end{document}
