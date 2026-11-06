@@ -1,62 +1,66 @@
 \section{Research Design}
-\begin{frame}\frametitle{Field Setting: P\&G Product Innovation}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.49\textwidth}\begin{block}{Setting}\begin{itemize}\item 791 randomized professionals.\item R\&D and commercial functions.\item Four business units in Europe and the Americas.\item May--July 2024.\end{itemize}\end{block}\end{column}
-\begin{column}{.49\textwidth}\begin{alertblock}{Task}\begin{itemize}\item Address real product-development needs.\item Combine technical and market considerations.\item Submit proposals for independent expert assessment.\end{itemize}\end{alertblock}\end{column}
-\end{columns}\src{Sections 3.1--3.2}\end{frame}
+\begin{frame}[t]{A 2 $\times$ 2 Field Experiment}
+\small
 
-\begin{frame}\frametitle{A 2 $\times$ 2 Randomized Design}
-\begin{center}\renewcommand{\arraystretch}{1.7}
-\begin{tabular}{lcc}\toprule
+\begin{block}{Assignment and sample}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabularx}{\linewidth}{@{}lXX@{}}\toprule
 &\textbf{Without AI}&\textbf{With AI}\\\midrule
-Individual&\colorbox{papergray!15}{\parbox{3.25cm}{\centering Individual No AI\\\scriptsize $n=154$}}&\colorbox{papergold!22}{\parbox{3.25cm}{\centering Individual + AI\\\scriptsize $n=155$}}\\
-Team&\colorbox{papergray!15}{\parbox{3.25cm}{\centering Team No AI\\\scriptsize $115$ teams}}&\colorbox{papergold!22}{\parbox{3.25cm}{\centering Team + AI\\\scriptsize $126$ teams}}\\
-\bottomrule\end{tabular}\end{center}
-\vspace{.3cm}\begin{block}{Identification logic}Vary human collaboration and AI access. Every two-person team pairs one R\&D and one commercial employee.\end{block}
-\src{Figure 1; Table 1}\end{frame}
-
-\begin{frame}\frametitle{Experimental Workflow}
-\centering
-\begin{tikzpicture}[node distance=.15cm,>=Latex,step/.style={draw=paperblue,rounded corners=2pt,fill=paperblue!5,align=center,text width=2.0cm,minimum height=1.25cm,font=\scriptsize}]
-\node[step](a){Pre-task\\survey};
-\node[step,right=of a](b){Randomize\\and train};
-\node[step,right=of b](c){Generate\\five ideas};
-\node[step,right=of c](d){Choose one\\and develop};
-\node[step,right=of d](e){Expert rating\\and post-survey};
-\foreach \x/\y in {a/b,b/c,c/d,d/e}{\draw[->,thick,paperred](\x)--(\y);}
-\end{tikzpicture}
-\vspace{.55cm}
-\begin{itemize}\item AI arms use a GPT-4-based tool after standardized prompting training.\item Five initial ideas in each condition support process-level comparisons.\item Conversations with AI and human teammates were recorded.\end{itemize}
-\src{Sections 3.2--3.3, 5.4.1}\end{frame}
-
-\begin{frame}\frametitle{Operationalizing the Outcomes}
-\small\renewcommand{\arraystretch}{1.17}
-\begin{tabularx}{\linewidth}{@{}l l X@{}}\toprule
-\textbf{Pillar}&\textbf{Measure}&\textbf{Operational definition}\\\midrule
-Performance&Quality&Blind expert rating, 1--10, standardized\\
-&Novelty / Feasibility&Additional expert ratings\\
-Expertise&Technicality&1--7, commercial to technical\\
-&Core job&Does employee routinely develop products?\\
-Sociality&Positive emotion&Change in enthusiasm, energy, excitement\\
-&Negative emotion&Change in anxiety, frustration, distress\\\bottomrule
+Individual&154 people&155 people\\
+Two-person team&115 pairs / 230 people&126 pairs / 252 people\\\bottomrule
 \end{tabularx}
-\vspace{.25cm}\begin{alertblock}{Measurement caution}A broader output is not the same as demonstrated learning by the employee.\end{alertblock}
-\src{Section 4.2}\end{frame}
-
-\begin{frame}\frametitle{Estimating Treatment Effects}
-\begin{block}{Regression specification}
-\scriptsize\[
-Y_i=\beta_0+\beta_1\mathrm{TeamNoAI}_i+\beta_2\mathrm{AloneAI}_i+
-\beta_3\mathrm{TeamAI}_i+\gamma X_i+\delta FE_i+\varepsilon_i.
-\]
 \end{block}
 \begin{columns}[T,onlytextwidth]
-\begin{column}{.48\textwidth}\begin{itemize}\item \textbf{Baseline:} individual without AI.\item Each coefficient compares a condition with the baseline.\end{itemize}\end{column}
-\begin{column}{.48\textwidth}\begin{itemize}\item Fixed effects for business unit and date.\item Controls: experience, job level, gender, previous AI use.\end{itemize}\end{column}
-\end{columns}\src{Section 4.1}\end{frame}
+\begin{column}{.48\textwidth}
+\begin{block}{Team composition}
+Each pair combines one R\&D and one commercial employee. Participants address business challenges within their own units.
+\end{block}
+\end{column}
+\begin{column}{0.48\textwidth}
+\begin{alertblock}{Analytical sample}
+791 participants produce 550 submissions. Each pair submits one joint solution for expert assessment.
+\end{alertblock}
+\end{column}
+\end{columns}
 
-\begin{frame}\frametitle{Why the Comparison Is Informative}
+\end{frame}
+
+\begin{frame}[t]{Experimental Workflow}
+\small
+\begin{block}{Prepare and assign}
+Participants receive task guidance and are randomly assigned to a condition. AI groups receive prompting training and a GPT-4-based tool.
+\end{block}
+\begin{block}{Generate, select and develop}
+Every individual or pair generates five ideas, selects one and develops it into a final proposal. This sequence separates idea generation from selection.
+\end{block}
+\begin{alertblock}{Evaluate and measure}
+Independent experts assess quality and technicality. Surveys record emotional change, while interaction records reveal patterns of AI use.
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}[t]{Measures and Estimation}
+\small
 \begin{columns}[T,onlytextwidth]
-\begin{column}{.49\textwidth}\begin{block}{Design safeguards}\begin{itemize}\item Stratified random assignment.\item Evaluators blind to experimental group.\item Covariate adjustment and robustness checks.\end{itemize}\end{block}\end{column}
-\begin{column}{.49\textwidth}\begin{alertblock}{Do not confuse the units}\begin{itemize}\item \textbf{791 people} randomized.\item \textbf{550 solutions} in quality regressions.\item Each two-person team submits one solution.\end{itemize}\end{alertblock}\end{column}
-\end{columns}\src{Sections 3--4; Tables 1--2}\end{frame}
+\begin{column}{.52\textwidth}
+\begin{block}{Outcome measures}
+\begin{itemize}
+\item \textbf{Quality} uses expert ratings on a 1--10 scale, standardized against the control group.
+\item \textbf{Technicality} ranges from commercial (1) to technical (7).
+\item \textbf{Emotions} measure changes between pretask and post-task surveys.
+\end{itemize}
+\end{block}
+\end{column}
+\begin{column}{0.44\textwidth}
+\begin{alertblock}{Treatment comparisons}
+Regression coefficients compare each condition with individuals working without AI. Additional specifications include business-unit and date effects, employee characteristics and prior AI use.
+\end{alertblock}
+\end{column}
+\end{columns}
+\medskip
+\[
+Y_i=\beta_0+\beta_1\mathrm{TeamNoAI}_i+\beta_2\mathrm{AloneAI}_i+\beta_3\mathrm{TeamAI}_i+\gamma X_i+\delta FE_i+\varepsilon_i.
+\]
+
+\end{frame}
+
