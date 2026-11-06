@@ -1,0 +1,157 @@
+\section{Empirical Results}
+\begin{frame}\frametitle{Result 1: AI Improves Solution Quality}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.61\textwidth}
+\begin{tikzpicture}
+\begin{axis}[ybar,width=\linewidth,height=5.1cm,ymin=0,ymax=.52,bar width=19pt,ymajorgrids=true,grid style={papergray!22},ylabel={Standardized effect on quality},symbolic x coords={Team,AloneAI,TeamAI},xtick=data,xticklabels={Team\\ no AI,Individual\\+ AI,Team\\+ AI},x tick label style={font=\scriptsize,align=center},yticklabel style={font=\scriptsize},nodes near coords,nodes near coords style={font=\scriptsize},axis line style={papergray},tick style={papergray}]
+\addplot[fill=paperblue!80,draw=paperblue] coordinates {(Team,.245)};
+\addplot[fill=papergold!80,draw=papergold] coordinates {(AloneAI,.373)};
+\addplot[fill=paperred!75,draw=paperred] coordinates {(TeamAI,.392)};
+\end{axis}
+\end{tikzpicture}
+\end{column}
+\begin{column}{.37\textwidth}
+\begin{block}{Compared with solo, no AI}
+\begin{itemize}\item Team No AI: \textbf{+0.245 SD} ($p<.05$).
+\item Individual + AI: \textbf{+0.373 SD} ($p<.01$).
+\item Team + AI: \textbf{+0.392 SD} ($p<.01$).\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\note{Model 1 coefficients; statistically distinguishable from the individual-no-AI baseline.}
+\src{Table 2, Model 1}\end{frame}
+
+\begin{frame}\frametitle{How Close Is AI to Human Collaboration?}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.49\textwidth}\begin{block}{Human collaboration}\centering\large Team No AI\\[.35em]\Huge\color{paperblue} +0.245 SD\end{block}\end{column}
+\begin{column}{.49\textwidth}\begin{alertblock}{AI-assisted individual}\centering\large Individual + AI\\[.35em]\Huge\color{paperred} +0.373 SD\end{alertblock}\end{column}
+\end{columns}
+\vspace{.35cm}
+\begin{itemize}\item Both conditions outperform the individual-no-AI baseline.\item Their quality distributions are similar (original Figure 3).\item \textbf{Caution:} comparable observed performance is not a formal equivalence test.\end{itemize}
+\keypoint{AI can reproduce some performance benefits of a human teammate.}
+\src{Section 5.1; Figures 2--3}\end{frame}
+
+\begin{frame}\frametitle{Result 2: AI Helps Less-Familiar Workers}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.49\textwidth}\begin{block}{Product development is a core job}\begin{itemize}\item Human teamwork improves quality.\item AI assistance also produces sizable gains.\end{itemize}\end{block}\end{column}
+\begin{column}{.49\textwidth}\begin{alertblock}{Product development is not a core job}\begin{itemize}\item Solo, no-AI performance is relatively weak.\item Individuals with AI approach teams containing experienced colleagues.\end{itemize}\end{alertblock}\end{column}
+\end{columns}
+\vspace{.3cm}\centering
+\large\textbf{AI extends access to task-relevant expertise.}
+\src{Section 5.2; Figure 4; Table 4}\end{frame}
+
+\begin{frame}\frametitle{Result 2: Bridging Functional Boundaries}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.48\textwidth}
+\begin{block}{Without AI}
+\centering R\&D staff\\ \strong{More technical}\\[.6em]
+Commercial staff\\ \strong{More market-focused}
+\end{block}
+\end{column}
+\begin{column}{.48\textwidth}
+\begin{alertblock}{With AI}
+\centering R\&D and commercial staff\\[.65em]
+\strong{More balanced solutions}\\[.65em]
+\small Weaker differences in technical orientation
+\end{alertblock}
+\end{column}
+\end{columns}
+\vspace{.35cm}
+\note{Technicality is expert-rated from 1 (commercial) to 7 (technical); the schematic summarizes the direction of the reported distributions, not reconstructed raw data.}
+\src{Section 5.2; Figure 5}\end{frame}
+
+\begin{frame}\frametitle{Result 3: AI Changes Emotional Experience}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.50\textwidth}
+\begin{block}{Positive emotion change}
+\begin{tabular}{lr}\toprule
+Team No AI & +0.269 SD\\
+Individual + AI & +0.457 SD\\
+Team + AI & +0.635 SD\\\bottomrule
+\end{tabular}
+\end{block}
+\end{column}
+\begin{column}{.48\textwidth}
+\begin{alertblock}{Negative emotion change}
+\begin{tabular}{lr}\toprule
+Individual + AI & $-0.233$ SD\\
+Team + AI & $-0.235$ SD\\\bottomrule
+\end{tabular}
+\end{alertblock}
+\end{column}
+\end{columns}
+\vspace{.4cm}
+\begin{itemize}\item Positive: enthusiasm, energy, excitement.\item Negative: anxiety, frustration, distress.\item Changes are based on \emph{self-reports} within a one-day workshop.\end{itemize}
+\src{Section 5.3; Tables 5--6, Model 1}\end{frame}
+
+\begin{frame}\frametitle{The Innovation Process: Where Does AI Help?}
+\begin{center}
+\begin{tikzpicture}[node distance=.55cm,>=Latex,
+q/.style={draw=paperblue,fill=paperblue!6,rounded corners,align=center,text width=3cm,minimum height=1.65cm}]
+\node[q](a){\textbf{Generate}\\five initial ideas};
+\node[q,right=of a](b){\textbf{Select}\\the most promising};
+\node[q,right=of b](c){\textbf{Develop}\\the final concept};
+\draw[->,very thick,paperred](a)--(b);
+\draw[->,very thick,paperred](b)--(c);
+\end{tikzpicture}
+\end{center}
+\vspace{.38cm}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.49\textwidth}
+\begin{block}{AI's strongest contribution}
+\centering Raises the quality of ideas from the outset.
+\end{block}
+\end{column}
+\begin{column}{.49\textwidth}
+\begin{alertblock}{Human collaboration matters}
+\centering Traditional teams show stronger accuracy in choosing their best idea.
+\end{alertblock}
+\end{column}
+\end{columns}
+\src{Section 5.4.1; Figure 8}\end{frame}
+
+\begin{frame}\frametitle{Generating vs. Selecting Ideas}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.5\textwidth}
+\begin{block}{Average idea quality}
+\large\centering AI-assisted groups start with stronger ideas.\end{block}
+\end{column}
+\begin{column}{.48\textwidth}
+\begin{alertblock}{Selection accuracy}
+\large\centering Human-only teams select their best idea about \textbf{50\%} of the time, versus roughly \textbf{37\%} in AI arms.\end{alertblock}
+\end{column}
+\end{columns}
+\vspace{.4cm}
+\begin{itemize}\item Five ideas were generated in each condition.\item AI improves the underlying pool, rather than clearly improving selection judgment.\item Participants may not always have used AI for the selection step.\end{itemize}
+\src{Section 5.4.1; Figure 8}\end{frame}
+
+\begin{frame}\frametitle{Beyond the Average: Exceptional Solutions}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.55\textwidth}
+\begin{tikzpicture}
+\begin{axis}[ybar,width=\linewidth,height=4.7cm,ymin=0,ymax=.16,bar width=22pt,ymajorgrids=true,grid style={papergray!20},ylabel={Top-decile probability},symbolic x coords={Control,TeamAI},xtick=data,xticklabels={Individual\\no AI,Team + AI},x tick label style={align=center,font=\scriptsize},yticklabel style={font=\scriptsize},nodes near coords,nodes near coords style={font=\scriptsize},scaled y ticks=false,yticklabel={\pgfmathprintnumber[fixed,precision=2]{\tick}}]
+\addplot[fill=papergray!70,draw=papergray] coordinates {(Control,.058)};
+\addplot[fill=paperred!70,draw=paperred] coordinates {(TeamAI,.150)};
+\end{axis}
+\end{tikzpicture}
+\end{column}
+\begin{column}{.43\textwidth}
+\begin{block}{Top 10\% outcomes}
+\begin{itemize}\item Baseline: \textbf{5.8\%}.\item Team + AI: \textbf{+9.2 percentage points} in the unadjusted model.\item About \textbf{15.0\%} predicted probability in that specification.\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\note{The treatment effect is significant vs the solo baseline; the difference versus Team No AI is not statistically significant in Table 9.}
+\src{Section 5.4.2; Figure 9; Table 9}\end{frame}
+
+\begin{frame}\frametitle{Additional Analyses: Beyond Output Quality}
+\begin{block}{Perceived quality}
+Despite improved objective results, AI users were less likely to believe their submission ranked in the top decile.
+\end{block}
+\begin{block}{Team collaboration}
+With AI, technical orientation in team outputs became less polarized, suggesting more balanced contributions.
+\end{block}
+\begin{block}{Patterns of AI use}
+Some retained substantial AI-generated text; others used AI for ideation and validation with little direct retention.
+\end{block}
+\src{Section 5.5; Figures 10--12}\end{frame}
