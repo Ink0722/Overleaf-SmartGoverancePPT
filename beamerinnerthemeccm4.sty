@@ -1,0 +1,56 @@
+%Tema para beamer "CCM4" versión 1
+%Desarrollo por Erick David Luna Núñez y 
+%Fernanda Barajas Hernandez
+
+\mode<presentation>
+
+\setbeamertemplate{background}{
+    \includegraphics[width=\paperwidth]{images/FONDO AL 10.png}
+}
+
+\setbeamerfont{date}{size=\small, shape=\upshape}
+\setbeamerfont{title}{size=\Huge}
+\setbeamerfont{author}{size=\small, shape=\upshape}
+\setbeamerfont{institute}{size=\footnotesize, shape=\itshape}
+
+%Acá va el título
+\defbeamertemplate*{title page}{ccm4}[1][]
+{
+    \begin{textblock}{4}(1,1)
+    \includegraphics[width=4cm]{\logoccm}
+  \end{textblock}
+
+    \vspace*{3.2cm}
+
+    \begin{beamercolorbox}[right,wd=0.95\paperwidth,sep=1pt,#1]{title page header}
+      \usebeamerfont{title}{\setstretch{1.1} \scalefont{1.5} \inserttitle}%
+    \end{beamercolorbox}
+
+    \vspace*{-0.1cm}
+
+    \begin{beamercolorbox}[right,wd=0.95\paperwidth,#1]{date}
+	\usebeamerfont{date}\insertdate%
+    \end{beamercolorbox}
+  
+  \vspace*{\fill}
+   \vspace*{1cm}
+  
+  \begin{beamercolorbox}[left,wd=\paperwidth]{author}
+    \usebeamerfont{date} \textbf{ \hspace*{0.5cm} \insertauthor}%
+  \end{beamercolorbox}
+  \vskip0.1cm%
+  \begin{beamercolorbox}[left,wd=\paperwidth]{institute}
+    \usebeamerfont{institute}{\hspace*{0.6cm} \insertinstitute}
+  \end{beamercolorbox}
+  
+  
+}
+
+%A definir la apareciencia de listas y tabla de contenidos
+\setbeamertemplate{items}[circle]
+\setbeamercolor{section in toc}{fg=black}
+\setbeamertemplate{section in toc}{{\Huge\color{gristexto}\oldstylenums{\inserttocsectionnumber}.}~\inserttocsection}
+\setbeamercolor{subsection in toc}{fg=gristexto}
+\setbeamertemplate{subsection in toc}{\hspace{1.45em}{\Huge \color{rojotexto}\rule[0.3ex]{3pt}{3pt}}~\inserttocsubsection\par}
+
+\mode<all>
