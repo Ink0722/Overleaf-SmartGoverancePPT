@@ -1,68 +1,71 @@
 \section{Research Design}
 \begin{frame}[t]{A 2 $\times$ 2 Field Experiment}
 \small
+P\&G professionals joined one-day workshops between May and July 2024. Random assignment varied human teamwork and AI access.
 
-\begin{block}{Assignment and sample}
-P\&G professionals participated in one-day workshops between May and July 2024.
-\smallskip\par
-\renewcommand{\arraystretch}{1.3}
-\begin{tabularx}{\linewidth}{@{}lXX@{}}\toprule
+\vspace{0.42cm}
+\renewcommand{\arraystretch}{1.65}
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}lXX@{}}\toprule
 &\textbf{Without AI}&\textbf{With AI}\\\midrule
 Individual&154 people&155 people\\
 Two-person team&115 pairs / 230 people&126 pairs / 252 people\\\bottomrule
 \end{tabularx}
-\end{block}
-\begin{columns}[T,onlytextwidth]
-\begin{column}{.48\textwidth}
-\begin{block}{Team composition}
-Each pair combines one R\&D and one commercial employee. Participants address business challenges within their own units.
-\end{block}
-\end{column}
-\begin{column}{0.48\textwidth}
-\begin{alertblock}{Analytical sample}
-791 participants produce 550 submissions. Each pair submits one joint solution for expert assessment.
-\end{alertblock}
-\end{column}
-\end{columns}
 
+\vspace{0.45cm}
+Each team paired one R\&D employee with one commercial employee. An individual or pair submitted one final solution.
+
+\vspace{0.33cm}
+\begin{alertblock}{Analytical sample}
+\textbf{791 participants} produced \textbf{550 submissions} for expert assessment.
+\end{alertblock}
 \end{frame}
 
 \begin{frame}[t]{Experimental Workflow}
 \small
-\begin{block}{Prepare and assign}
-Participants receive task guidance and are randomly assigned to a condition. AI groups receive prompting training and a GPT-4-based tool.
-\end{block}
-\begin{block}{Generate, select and develop}
-Every individual or pair generates five ideas, selects one and develops it into a final proposal. This sequence separates idea generation from selection.
-\end{block}
-\begin{alertblock}{Evaluate and measure}
-Independent experts assess quality and technicality. Surveys record emotional change, while interaction records reveal patterns of AI use.
-\end{alertblock}
+\vspace{0.30cm}
+\begin{columns}[T,onlytextwidth]
+\begin{column}{.31\textwidth}
+{\Large\textcolor{paperred}{\bfseries 1}}\par\medskip
+{\bfseries Prepare}\par\smallskip
+Participants receive task guidance and a condition. AI groups learn to use a GPT-4-based tool.
+\end{column}
+\begin{column}{.31\textwidth}
+{\Large\textcolor{paperred}{\bfseries 2}}\par\medskip
+{\bfseries Create}\par\smallskip
+Each individual or pair generates five ideas, chooses one and develops a final proposal.
+\end{column}
+\begin{column}{.31\textwidth}
+{\Large\textcolor{paperred}{\bfseries 3}}\par\medskip
+{\bfseries Evaluate}\par\smallskip
+Experts rate the proposal. Surveys record emotional change; interaction data show AI use.
+\end{column}
+\end{columns}
 
+\vspace{0.82cm}
+\begin{block}{Why the sequence matters}
+Generating good options and selecting the best one are separate parts of the innovation process.
+\end{block}
 \end{frame}
 
 \begin{frame}[t]{Measures and Estimation}
 \small
 \begin{columns}[T,onlytextwidth]
-\begin{column}{.52\textwidth}
-\begin{block}{Outcome measures}
-\begin{itemize}
-\item \textbf{Quality} uses expert ratings on a 1--10 scale, expressed in standard deviations (SD) relative to the control group.
-\item \textbf{Technicality} ranges from commercial (1) to technical (7).
-\item \textbf{Emotions} measure changes between pretask and post-task surveys.
-\end{itemize}
-\end{block}
+\begin{column}{.49\textwidth}
+\textcolor{paperred}{\bfseries Outcomes}\par\smallskip
+\textbf{Quality:} expert ratings (1--10), standardized for comparison.\par\smallskip
+\textbf{Technicality:} commercial (1) to technical (7).\par\smallskip
+\textbf{Emotions:} change from pretask to post-task survey.
 \end{column}
-\begin{column}{0.44\textwidth}
-\begin{alertblock}{Treatment comparisons}
-Regression coefficients compare each condition with individuals working without AI. Additional specifications include business-unit and date effects, employee characteristics and prior AI use.
-\end{alertblock}
+\begin{column}{.47\textwidth}
+\textcolor{paperred}{\bfseries Comparison}\par\smallskip
+Each treatment coefficient compares with individuals working without AI. Additional models account for business unit, workshop date, employee characteristics and prior AI use.
 \end{column}
 \end{columns}
-\medskip
-\[
-Y_i=\beta_0+\beta_1\mathrm{TeamNoAI}_i+\beta_2\mathrm{AloneAI}_i+\beta_3\mathrm{TeamAI}_i+\gamma X_i+\delta FE_i+\varepsilon_i.
-\]
 
+\vspace{0.55cm}
+\begin{block}{Estimation}
+\centering
+{\footnotesize $Y_i=\beta_0+\beta_1\mathrm{TeamNoAI}_i+\beta_2\mathrm{AloneAI}_i+\beta_3\mathrm{TeamAI}_i+\gamma X_i+\delta FE_i+\varepsilon_i$}\par\smallskip
+\raggedright The three $\beta$ terms capture the effects of human teamwork, AI-assisted individual work and AI-assisted teamwork relative to the control group.
+\end{block}
 \end{frame}
-
