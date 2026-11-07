@@ -56,6 +56,8 @@
 \begingroup\setlength{\fboxsep}{8pt}\color{papergray}%
 \fcolorbox{papergray!45}{white}{\parbox[c][#3][c]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\centering\large Figure #1\par\medskip\normalsize #2}}%
 \endgroup}
+\newcommand{\paperfigure}[2]{%
+\parbox[c][#2][c]{\linewidth}{\centering\includegraphics[width=\linewidth,height=#2,keepaspectratio]{images/paper-figures/figure-#1.png}}}
 \renewcommand*\oldstylenums[1]{\textosf{#1}}
 \definecolor{mostazaccm}{RGB}{218,165,32}
 \title{ 
